@@ -11,6 +11,11 @@ namespace OroClient.Models.User
         public User[] data { get; set; }
     }
 
+    public class UserRoot
+    {
+        public User data { get; set; }
+    }
+
     public class User
     {       
         public string type { get; set; }

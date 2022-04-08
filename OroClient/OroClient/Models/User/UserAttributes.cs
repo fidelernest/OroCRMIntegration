@@ -19,9 +19,9 @@ namespace OroClient.Models.User
         public object nameSuffix { get; set; }
         public object birthday { get; set; }
         public bool enabled { get; set; }
-        public DateTime lastLogin { get; set; }
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
+        public string lastLogin { get; set; }
+        public string createdAt { get; set; }
+        public string updatedAt { get; set; }
         public int loginCount { get; set; }
         public object passwordRequestedAt { get; set; }
         public object passwordChangedAt { get; set; }

@@ -9,6 +9,10 @@ namespace OroClient.Models.Task
     {
         public Task[] data { get; set; }
     }
+    public class TaskRoot
+    {
+        public Task data { get; set; }
+    }
 
     public class Task
     {

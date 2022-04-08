@@ -9,8 +9,8 @@ namespace OroClient.Models.Task
     {
         public string subject { get; set; }
         public string description { get; set; }
-        public DateTime dueDate { get; set; }
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
+        public string dueDate { get; set; }
+        public string createdAt { get; set; }
+        public string updatedAt { get; set; }
     }
 }

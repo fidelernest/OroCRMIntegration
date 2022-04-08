@@ -24,8 +24,8 @@ namespace OroClient.Models.Lead
         public object website { get; set; }
         public object numberOfEmployees { get; set; }
         public object industry { get; set; }
-        public DateTime createdAt { get; set; }
-        public DateTime updatedAt { get; set; }
+        public string createdAt { get; set; }
+        public string updatedAt { get; set; }
         public object notes { get; set; }
         public string twitter { get; set; }
         public object linkedIn { get; set; }

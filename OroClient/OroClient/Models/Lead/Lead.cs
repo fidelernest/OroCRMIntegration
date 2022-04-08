@@ -9,6 +9,11 @@ namespace OroClient.Models.Lead
     {
         public Lead[] data { get; set; }
     }
+    public class LeadRoot
+    {
+        public Lead data { get; set; }
+    }
+
     public class Lead
     {
         public string type { get; set; }
