@@ -1,0 +1,36 @@
+﻿@page
+@model OroClient.Pages.Tareas.IndexModel
+@{
+}
+
+<div class="text-center">
+    <a style="margin-left:5px" class="btn btn-lg btn-success" href="/Tareas/create">Nuevo</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="table-info">
+            <th scope="col">Asunto</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Fecha de Vencimiento</th>
+            <th scope="col">Ultima actualizacion</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Tareas.data != null)
+        {
+
+            @foreach (Models.Tareas.Tarea item in Model.Tareas.data)
+            {
+                <tr>
+                    <th scope="row">@item.attributes.subject</th>
+                    <th scope="row">@item.attributes.description</th>
+                    <th scope="row">@System.Convert.ToDateTime(item.attributes.dueDate).ToString("f")</th>
+                    <th scope="row">@System.Convert.ToDateTime(item.attributes.updatedAt).ToString("f")</th>
+                    <th scope="row"><a href="/Tareas/details?id=@item.id">Editar</a></th>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
