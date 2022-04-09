@@ -1,36 +1,39 @@
 ﻿@page
-@model OroClient.Pages.User.IndexModel
+@model OroClient.Pages.Lead.IndexModel
 @{
-
 }
+
 <form method="post">
 
     <fieldset>
-            <a style="margin-bottom:25px;" class="btn btn-success align-self-lg-end" href="/User/create">Nuevo</a>     
+        <a style="margin-bottom:25px;" class="btn btn-success align-self-lg-end" href="/lead/create">Nuevo</a>
     </fieldset>
 
     <table class="table table-striped">
         <thead>
             <tr class="table-info">
-                <th scope="col">Usuario</th>
+                <th scope="col">Lead Nombre</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
+                <th scope="col">Celular</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            @if (Model.usuarios.data != null)
+            @if (Model.leads.data != null)
             {
 
-                @foreach (Models.User.User item in Model.usuarios.data)
+                @foreach (Models.Lead.Lead item in Model.leads.data)
                 {
             <tr>
-                <th scope="row">@item.attributes.username</th>
+                <th scope="row">@item.attributes.name</th>
                 <th scope="row">@item.attributes.firstName</th>
                 <th scope="row">@item.attributes.lastName</th>
-                <th scope="row">@item.attributes.email</th>
-                <th scope="row"><a href="/User/details?id=@item.id" >Editar</a></th>
+                <th scope="row">@item.attributes.primaryEmail</th>
+                <th scope="row">@item.attributes.primaryPhone</th>
+
+                <th scope="row"><a href="/Lead/details?id=@item.id">Editar</a></th>
             </tr>
                 }
             }

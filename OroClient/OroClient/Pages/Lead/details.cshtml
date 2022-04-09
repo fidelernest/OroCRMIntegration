@@ -1,0 +1,37 @@
+﻿@page
+@model OroClient.Pages.Lead.detailsModel
+@{
+}
+<form method="post">
+    <fieldset>
+        <legend>Detalles</legend>
+        <div class="row" style="margin-top:25px;">
+            <div class="col-1" disabled>
+                <label class="form-label">ID</label>
+                <input type="text" asp-for="@Model.leads.data[0].id" class="form-control" readonly placeholder="ID">
+            </div>
+            <div class="col-2" disabled>
+                <label class="form-label">Lead Name</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.name" class="form-control" placeholder="Username">
+            </div>
+            <div class="col-2">
+                <label class="form-label">Nombre</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.firstName" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="col-2">
+                <label class="form-label">Apellido</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.lastName" class="form-control" placeholder="Apellido">
+            </div>
+            <div class="col-3">
+                <label class="form-label">Correo</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.primaryEmail" class="form-control" placeholder="Correo">
+            </div>
+            <div class="col-3">
+                <label class="form-label">Telefono</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.primaryPhone" class="form-control" placeholder="Correo">
+            </div>
+        </div>
+        <hr />
+    </fieldset>
+    <a><button class="btn btn-success">Actualizar</button></a> <a class="btn btn-primary" href="/lead/">Atras</a>
+</form>

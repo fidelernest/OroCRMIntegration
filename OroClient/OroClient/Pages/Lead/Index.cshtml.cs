@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OroClient.Utils;
-using OroClient.Models.User;
-using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using OroClient.Models.Lead;
+using OroClient.Utils;
 
-namespace OroClient.Pages.User
+namespace OroClient.Pages.Lead
 {
     public class IndexModel : PageModel
     {
@@ -23,20 +23,16 @@ namespace OroClient.Pages.User
         }
 
         [BindProperty]
-        public UsersRoot usuarios { get; set; }
-       
-        
+        public LeadsRoot leads { get; set; }
         public async Task OnGetAsync()
         {
-            var result = await _api.Get("/api/users?page[size]=1000");
+            var result = await _api.Get("/api/leads?page[size]=1000");
 
             if (result.IsSuccessStatusCode)
             {
                 var response = await result.Content.ReadAsStringAsync();
-                usuarios = JsonConvert.DeserializeObject<UsersRoot>(response);
+                leads = JsonConvert.DeserializeObject<LeadsRoot>(response);
             }
         }
-
     }
 }
-
