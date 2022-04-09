@@ -3,4 +3,48 @@
 @{
 
 }
+<form method="post">
 
+    <fieldset>
+        <legend>Filtros</legend>
+        <div class="row" style="margin-top:25px; margin-bottom:25px;">
+            <div class="col-2">
+                <input type="text" asp-for="filtro.id" class="form-control" placeholder="ID">
+            </div>
+            <div class="col-3">
+                <input type="text" asp-for="filtro.name" class="form-control" placeholder="Nombre">
+            </div>
+            <a><button class="btn btn-primary">Consultar</button></a>
+            <a style="margin-left:5px" class="btn btn-success" href="/User/create">Nuevo</a>
+        </div>
+            
+    </fieldset>
+
+    <table class="table table-striped">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Usuario</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.usuarios.data != null)
+            {
+
+                @foreach (Models.User.User item in Model.usuarios.data)
+                {
+            <tr>
+                <th scope="row">@item.attributes.username</th>
+                <th scope="row">@item.attributes.firstName</th>
+                <th scope="row">@item.attributes.lastName</th>
+                <th scope="row">@item.attributes.email</th>
+                <th scope="row"><a href="/User/details?id=@item.id" >Editar</a></th>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</form>

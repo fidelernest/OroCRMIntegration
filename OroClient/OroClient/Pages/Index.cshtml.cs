@@ -23,15 +23,6 @@ namespace OroClient.Pages
         public async Task OnGetAsync()
         {
 
-            var result = await ApiConsumer.getEndPoint("http://orocrm.eastus.cloudapp.azure.com/api/users");
-
-            var json = JsonConvert.DeserializeObject<UsersRoot>(result);
-
-            UserRoot root = new UserRoot();
-            UserAttributes attributes = new UserAttributes();
-            root.data = json.data[2];
-
-            await ApiConsumer.patchEndPoint("dsfsd", root);
         }
     }
 }
