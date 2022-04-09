@@ -27,7 +27,7 @@ namespace OroClient.Models.User
 
     public class prop
     {
-        public detalle data { get; set; }
+        public Data data { get; set; }
     }
 
     public class Links

@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using OroClient.Models.Tareas;
+using OroClient.Models.Calls;
 using OroClient.Utils;
 using System.Threading.Tasks;
 
-namespace OroClient.Pages.Tareas
+namespace OroClient.Pages.Call
 {
     public class IndexModel : PageModel
     {
@@ -14,7 +14,7 @@ namespace OroClient.Pages.Tareas
         private readonly ILogger<IndexModel> _logger;
 
         [BindProperty]
-        public TasksRoot Tareas { get; set; }
+        public CallsRoot Calls { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, IApiConsumer api)
         {
@@ -24,12 +24,12 @@ namespace OroClient.Pages.Tareas
 
         public async Task OnGetAsync()
         {
-            var result = await _api.Get("/api/tasks?sort=dueDate&page[number]=1&page[size]=1000");
+            var result = await _api.Get("/api/calls?sort=callDateTime&page[number]=1&page[size]=1000");
 
             if (result.IsSuccessStatusCode)
             {
                 var response = await result.Content.ReadAsStringAsync();
-                Tareas = JsonConvert.DeserializeObject<TasksRoot>(response);
+                Calls = JsonConvert.DeserializeObject<CallsRoot>(response);
             }
         }
     }

@@ -29,12 +29,12 @@ namespace OroClient.Models.Lead
 
     public class Addresses
     {
-        public detalle[] data { get; set; }
+        public Data[] data { get; set; }
     }
 
     public class Owner
     {
-        public detalle data { get; set; }
+        public Data data { get; set; }
     }
 
 
@@ -45,7 +45,7 @@ namespace OroClient.Models.Lead
 
     public class Organization
     {
-        public detalle data { get; set; }
+        public Data data { get; set; }
     }
 
 
@@ -56,12 +56,12 @@ namespace OroClient.Models.Lead
 
     public class Source
     {
-        public detalle data { get; set; }
+        public Data data { get; set; }
     }
 
     public class Status
     {
-        public detalle data { get; set; }
+        public Data data { get; set; }
     }
 
 

@@ -1,0 +1,30 @@
+﻿@page
+@model OroClient.Pages.Call.CreateModel
+@{
+}
+
+<form method="post">
+    <fieldset>
+        <legend>New Task</legend>
+        <div class="row" style="margin-top:25px;">
+            <div class="col-6" disabled>
+                <label class="form-label">Subject</label>
+                <input type="text" asp-for="@Model.call.data.attributes.subject" class="form-control" placeholder="Subject">
+            </div>
+            <div class="col-6">
+                <label class="form-label">Call date</label>
+                <input type="date" asp-for="@Model.call.data.attributes.callDateTime" class="form-control" placeholder="Call date">
+            </div>
+            <div class="col-6">
+                <label class="form-label">Phone</label>
+                <input type="tel" asp-for="@Model.call.data.attributes.phoneNumber" class="form-control" placeholder="Phone">
+            </div>
+            <div class="col-6">
+                <label class="form-label">Duration (min:sec)</label>
+                <input type="text" asp-for="@Model.call.data.attributes.duration" class="form-control" placeholder="Duration" />
+            </div>
+        </div>
+        <hr />
+    </fieldset>
+    <button type="submit" class="btn btn-success">Guardar</button> <a class="btn btn-primary" href="/Tareas/">Back</a>
+</form>
