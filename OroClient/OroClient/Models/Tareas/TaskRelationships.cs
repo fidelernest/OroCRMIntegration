@@ -2,12 +2,12 @@
 {
     public class TaskRelationships
     {
-        public prop taskPriority { get; set; }
-        public prop owner { get; set; }
-        public prop createdBy { get; set; }
-        public prop organization { get; set; }
-        public prop status { get; set; }
-        public props activityTargets { get; set; }
+        public Prop taskPriority { get; set; }
+        public Prop owner { get; set; }
+        public Prop createdBy { get; set; }
+        public Prop organization { get; set; }
+        public Prop status { get; set; }
+        public Props activityTargets { get; set; }
         public Comments comments { get; set; }
     }
 

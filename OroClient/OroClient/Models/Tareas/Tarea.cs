@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace OroClient.Models.Tareas
+﻿namespace OroClient.Models.Tareas
 {
     public class TasksRoot
     {
         public Tarea[] data { get; set; }
     }
-    public class TaskRoot : ICloneable
+    public class TaskRoot
     {
         public Tarea data { get; set; }
-
-        public object Clone()
-        {
-            return new TaskRoot { data = this.data };
-        }
     }
 
     public class Tarea
