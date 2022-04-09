@@ -17,8 +17,8 @@ namespace OroClient.Models.User
     }
 
     public class User
-    {       
-        public string type { get; set; }
+    {
+        public string type => "users";
         public string id { get; set; }
         public UserAttributes attributes { get; set; }
         public UserRelationships relationships { get; set; }
