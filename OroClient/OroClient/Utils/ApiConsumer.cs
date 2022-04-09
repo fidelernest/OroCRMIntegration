@@ -1,46 +1,49 @@
 ﻿using Newtonsoft.Json;
-using OroClient.Models.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OroClient.Utils
 {
-    public  class ApiConsumer
-    {
-        public static async Task<string> getEndPoint(string URL)
+    public class ApiConsumer : IApiConsumer
+	{
+		public static string BaseUrl => "http://orocrm.eastus.cloudapp.azure.com";
+
+		private string GetUrl(string uri)
+        {
+			return $"{BaseUrl}{uri}";
+        }
+
+        public async Task<HttpResponseMessage> Get(string uri)
         {
 			var client = new HttpClient();
+
 			var request = new HttpRequestMessage
 			{
 				Method = HttpMethod.Get,
-				RequestUri = new Uri(URL),
+				RequestUri = new Uri(GetUrl(uri)),
 				Headers =
-			{
-				{ "Accept", "application/vnd.api+json" },
-				{ "Authorization", "WSSE profile=\"UsernameToken\"" },
-				{ "X-WSSE", Wsse.GenerateHeader() },
-			},
-					};
-			using (var response = await client.SendAsync(request))
-			{
-				response.EnsureSuccessStatusCode();
-				var respuesta = await response.Content.ReadAsStringAsync();
-				return respuesta;
-			}
+				{
+					{ "Accept", "application/vnd.api+json" },
+					{ "Authorization", "WSSE profile=\"UsernameToken\"" },
+					{ "X-WSSE", Wsse.GenerateHeader() },
+				}
+			};
+
+			var response = await client.SendAsync(request);
+
+			return response;
 		}
 
-		public static async Task patchEndPoint(string URL, UserRoot body)
+		public async Task<HttpResponseMessage> Patch(string uri, dynamic body)
 		{
 			var client = new HttpClient();
+
 			var request = new HttpRequestMessage
 			{
 				Method = HttpMethod.Patch,
-				RequestUri = new Uri("http://orocrm.eastus.cloudapp.azure.com/api/users/3"/*URL*/),
+				RequestUri = new Uri(GetUrl(uri)),
 				Headers =
 				{
 					{ "Accept", "application/vnd.api+json" },
@@ -49,8 +52,42 @@ namespace OroClient.Utils
 				},
 				Content =  new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json")
 			};
-			var response = await client.SendAsync(request);
 			
+			var response = await client.SendAsync(request);
+
+			return response;
 		}
+
+		public async Task<HttpResponseMessage> Post(string uri, dynamic body)
+		{
+			var client = new HttpClient();
+
+			string stringBody = JsonConvert.SerializeObject(body);
+
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Post,
+				RequestUri = new Uri(GetUrl(uri)),
+				Headers =
+				{
+					{ "Accept", "application/vnd.api+json" },
+					{ "Authorization", "WSSE profile=\"UsernameToken\"" },
+					{ "X-WSSE", Wsse.GenerateHeader() },
+				},
+				Content = new StringContent(stringBody, Encoding.UTF8, "application/json")
+			};
+
+
+			var response = await client.SendAsync(request);
+
+			return response;
+		}
+	}
+
+	public interface IApiConsumer
+    {
+		Task<HttpResponseMessage> Get(string uri);
+		Task<HttpResponseMessage> Patch(string uri, dynamic body);
+		Task<HttpResponseMessage> Post(string uri, dynamic body);
 	}
 }
