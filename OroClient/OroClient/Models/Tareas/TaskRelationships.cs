@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace OroClient.Models.Tareas
+﻿namespace OroClient.Models.Tareas
 {
     public class TaskRelationships
     {
@@ -14,15 +9,6 @@ namespace OroClient.Models.Tareas
         public prop status { get; set; }
         public props activityTargets { get; set; }
         public Comments comments { get; set; }
-    }
-
-    public class prop
-    {
-        public detalle data { get; set; }
-    }
-    public class props
-    {
-        public detalle[] data { get; set; }
     }
 
     public class Comments

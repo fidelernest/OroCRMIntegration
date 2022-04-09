@@ -9,14 +9,19 @@ namespace OroClient.Models.Tareas
     {
         public Tarea[] data { get; set; }
     }
-    public class TaskRoot
+    public class TaskRoot : ICloneable
     {
         public Tarea data { get; set; }
+
+        public object Clone()
+        {
+            return new TaskRoot { data = this.data };
+        }
     }
 
     public class Tarea
     {
-        public string type { get; set; }
+        public string type => "tasks";
         public string id { get; set; }
         public taskAttributes attributes { get; set; }
         public TaskRelationships relationships { get; set; }

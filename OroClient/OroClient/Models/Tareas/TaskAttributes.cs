@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace OroClient.Models.Tareas
+﻿namespace OroClient.Models.Tareas
 {
     public class taskAttributes
     {
