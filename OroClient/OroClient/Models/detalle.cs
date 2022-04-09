@@ -13,11 +13,17 @@ namespace OroClient.Models
 
     public class prop
     {
-        public object data { get; set; }
+        public Data data { get; set; }
     }
 
     public class props
     {
         public detalle[] data { get; set; }
+    }
+
+    public class Data
+    {
+        public string type { get; set; }
+        public string id { get; set; }
     }
 }

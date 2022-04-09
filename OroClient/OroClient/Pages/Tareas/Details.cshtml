@@ -1,5 +1,5 @@
 ﻿@page
-@model OroClient.Pages.Tareas.CreateModel
+@model OroClient.Pages.Tareas.DetailsModel
 @{
 }
 
@@ -7,7 +7,7 @@
     <fieldset>
         <legend>New Task</legend>
         <div class="row" style="margin-top:25px;">
-            <div class="col-4" disabled>
+            <div class="col-4">
                 <label class="form-label">Subject</label>
                 <input type="text" asp-for="@Model.tarea.data.attributes.subject" class="form-control" placeholder="Subject">
             </div>
@@ -22,8 +22,7 @@
                     listItems.Add(new SelectListItem
                     {
                         Text = "Normal",
-                        Value = "normal",
-                        Selected = true
+                        Value = "normal"
                     });
                     listItems.Add(new SelectListItem
                     {
@@ -46,5 +45,5 @@
         </div>
         <hr />
     </fieldset>
-    <button type="submit" class="btn btn-success">Guardar</button> <a class="btn btn-primary" href="/Tareas/">Back</a>
+    <button type="submit" class="btn btn-success">Save</button> <a class="btn btn-primary" href="/Tareas/">Back</a>
 </form>

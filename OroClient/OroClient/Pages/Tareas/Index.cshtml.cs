@@ -26,7 +26,7 @@ namespace OroClient.Pages.Tareas
 
         public async Task OnGetAsync()
         {
-            var result = await _api.Get("/api/tasks?sort=dueDate");
+            var result = await _api.Get("/api/tasks?sort=dueDate&page[number]=1&page[size]=1000");
 
             if (result.IsSuccessStatusCode)
             {
