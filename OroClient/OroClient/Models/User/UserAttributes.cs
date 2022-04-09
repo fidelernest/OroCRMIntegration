@@ -23,7 +23,7 @@ namespace OroClient.Models.User
         public string createdAt { get; set; }
         public string updatedAt { get; set; }
         public int loginCount { get; set; }
-        public string password { get; set; }
+       // public string password { get; set; }
         public object passwordRequestedAt { get; set; }
         public object passwordChangedAt { get; set; }
         public object[] emails { get; set; }

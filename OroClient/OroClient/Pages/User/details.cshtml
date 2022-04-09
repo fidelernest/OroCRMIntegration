@@ -8,23 +8,27 @@
         <div class="row" style="margin-top:25px;">
             <div class="col-1" disabled>
                 <label class="form-label">ID</label>
-                <input type="text" asp-for="@Model.usuario.id" class="form-control" readonly placeholder="ID">
+                <input type="text" asp-for="@Model.usuarios.data[0].id" class="form-control" readonly placeholder="ID">
             </div>
             <div class="col-2" disabled>
                 <label class="form-label">Username</label>
-                <input type="text" asp-for="@Model.usuario.attributes.username" class="form-control" placeholder="Username">
+                <input type="text" asp-for="@Model.usuarios.data[0].attributes.username" class="form-control" placeholder="Username">
             </div>
             <div class="col-2">
                 <label class="form-label">Nombre</label>
-                <input type="text" asp-for="@Model.usuario.attributes.firstName" class="form-control" placeholder="Nombre">
+                <input type="text" asp-for="@Model.usuarios.data[0].attributes.firstName" class="form-control" placeholder="Nombre">
             </div>
             <div class="col-2">
                 <label class="form-label">Apellido</label>
-                <input type="text" asp-for="@Model.usuario.attributes.lastName" class="form-control" placeholder="Apellido">
+                <input type="text" asp-for="@Model.usuarios.data[0].attributes.lastName" class="form-control" placeholder="Apellido">
             </div>
             <div class="col-3">
                 <label class="form-label">Correo</label>
-                <input type="text" asp-for="@Model.usuario.attributes.email" class="form-control" placeholder="Correo">
+                <input type="text" asp-for="@Model.usuarios.data[0].attributes.email" class="form-control" placeholder="Correo">
+            </div>
+            <div class="col-3">
+                <label class="form-label">Correo</label>
+                <input type="text" asp-for="@Model.usuarios.data[0].attributes" class="form-control" placeholder="Correo">
             </div>
         </div>
         <hr />

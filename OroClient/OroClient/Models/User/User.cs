@@ -13,13 +13,21 @@ namespace OroClient.Models.User
 
     public class UserRoot
     {
-        public User data { get; set; }
+        public dynamic data { get; set; }
     }
 
     public class User
     {
         public string type => "users";
         public string id { get; set; }
+        public UserAttributes attributes { get; set; }
+        public UserRelationships relationships { get; set; }
+    }
+
+    public class UserCreate
+    {
+        public string type => "users";
+        //public string id { get; set; }
         public UserAttributes attributes { get; set; }
         public UserRelationships relationships { get; set; }
     }
