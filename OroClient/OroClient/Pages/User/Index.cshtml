@@ -5,9 +5,10 @@
 }
 <form method="post">
 
-    <fieldset>
-            <a style="margin-bottom:25px;" class="btn btn-success align-self-lg-end" href="/User/create">Nuevo</a>     
-    </fieldset>
+
+    <div class="text-center">
+        <a style="margin-left:5px" class="btn btn-lg btn-success" href="/User/create">New</a>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -25,13 +26,13 @@
 
                 @foreach (Models.User.User item in Model.usuarios.data)
                 {
-            <tr>
-                <th scope="row">@item.attributes.username</th>
-                <th scope="row">@item.attributes.firstName</th>
-                <th scope="row">@item.attributes.lastName</th>
-                <th scope="row">@item.attributes.email</th>
-                <th scope="row"><a href="/User/details?id=@item.id" >Editar</a></th>
-            </tr>
+                    <tr>
+                        <th scope="row">@item.attributes.username</th>
+                        <th scope="row">@item.attributes.firstName</th>
+                        <th scope="row">@item.attributes.lastName</th>
+                        <th scope="row">@item.attributes.email</th>
+                        <th scope="row"><a href="/User/details?id=@item.id">Editar</a></th>
+                    </tr>
                 }
             }
         </tbody>

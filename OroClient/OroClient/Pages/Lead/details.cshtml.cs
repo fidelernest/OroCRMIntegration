@@ -50,7 +50,8 @@ namespace OroClient.Pages.Lead
             _leads.data[0].attributes.firstName = leads.data[0].attributes.firstName;
             _leads.data[0].attributes.name = leads.data[0].attributes.name;
             _leads.data[0].attributes.lastName = leads.data[0].attributes.lastName;
-            _leads.data[0].attributes.primaryEmail = leads.data[0].attributes.primaryEmail;
+            _leads.data[0].attributes.twitter = leads.data[0].attributes.twitter;
+            _leads.data[0].attributes.primaryPhone = leads.data[0].attributes.primaryPhone;
 
             LeadRoot LRoot = new LeadRoot();
             LRoot.data = _leads.data[0];

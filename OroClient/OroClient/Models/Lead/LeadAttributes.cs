@@ -30,7 +30,7 @@ namespace OroClient.Models.Lead
         public string twitter { get; set; }
         public object linkedIn { get; set; }
         public string primaryPhone { get; set; }
-        public string primaryEmail { get; set; }
+        //public string primaryEmail { get; set; }
         public Phone[] phones { get; set; }
         public Email[] emails { get; set; }
     }

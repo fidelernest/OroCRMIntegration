@@ -10,17 +10,17 @@ namespace OroClient.ViewModels
 
         public class Rootobject
         {
-            public lead data { get; set; }
+            public leadData data { get; set; }
         }
 
-        public class lead
+        public class leadData
         {
             public string type { get; set; }
             public Attributes attributes { get; set; }
             public Relationships relationships { get; set; }
         }
 
-        public class Attributes
+        public class LeadAttributes
         {
             public string name { get; set; }
         }

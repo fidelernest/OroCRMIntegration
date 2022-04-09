@@ -3,7 +3,7 @@
 @{
 }
 <form method="post">
-    <fieldset>
+    <fieldset style="margin-bottom:10px;">
         <legend>Detalles</legend>
         <div class="row" style="margin-top:25px;">
             <div class="col-1" disabled>
@@ -23,12 +23,12 @@
                 <input type="text" asp-for="@Model.leads.data[0].attributes.lastName" class="form-control" placeholder="Apellido">
             </div>
             <div class="col-3">
-                <label class="form-label">Correo</label>
-                <input type="text" asp-for="@Model.leads.data[0].attributes.primaryEmail" class="form-control" placeholder="Correo">
+                <label class="form-label">twitter</label>
+                <input type="text" asp-for="@Model.leads.data[0].attributes.twitter" class="form-control" placeholder="twitter">
             </div>
             <div class="col-3">
                 <label class="form-label">Telefono</label>
-                <input type="text" asp-for="@Model.leads.data[0].attributes.primaryPhone" class="form-control" placeholder="Correo">
+                <input type="text" asp-for="@Model.leads.data[0].attributes.primaryPhone" readonly class="form-control" placeholder="telefonop">
             </div>
         </div>
         <hr />

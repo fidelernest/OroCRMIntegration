@@ -5,9 +5,6 @@
 
 <form method="post">
 
-    <fieldset>
-        <a style="margin-bottom:25px;" class="btn btn-success align-self-lg-end" href="/lead/create">Nuevo</a>
-    </fieldset>
 
     <table class="table table-striped">
         <thead>
@@ -15,8 +12,9 @@
                 <th scope="col">Lead Nombre</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
-                <th scope="col">Correo</th>
+                <th scope="col">twitter</th>
                 <th scope="col">Celular</th>
+                <th scope="col">Ultima Actualizacion</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -30,8 +28,10 @@
                 <th scope="row">@item.attributes.name</th>
                 <th scope="row">@item.attributes.firstName</th>
                 <th scope="row">@item.attributes.lastName</th>
-                <th scope="row">@item.attributes.primaryEmail</th>
+                <th scope="row">@item.attributes.twitter</th>
                 <th scope="row">@item.attributes.primaryPhone</th>
+                <th scope="row">@System.Convert.ToDateTime(item.attributes.updatedAt).ToString("f")</th>
+
 
                 <th scope="row"><a href="/Lead/details?id=@item.id">Editar</a></th>
             </tr>
